@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>校园报修系统后台管理</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="__CSS__/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME CSS -->
+    <link href="__CSS__/font-awesome.min.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE CSS -->
+    <link href="__CSS__/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="head">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a href="index.html">
+                    <img src="__IMG__/logo.png"/>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                <img src="__IMG__/top-mouse.png " class="header-mid"/>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h4><span>Call:</span> +86-13188888888</h4>
+                <h4><span>E-mail:</span> info@domain.com</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <div class="row noti-div">
+            <div class="col-lg-3 col-md-3 col-sm-3  text-center">
+                <a href="/admin/listServicemen">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-user-md fa-4x"></i>
+                        <span class="label label-info">All Servicemen</span>
+                        <!--<span class="label label-danger">5</span>-->
+                        <p>
+                            查看全部的维修人员
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                <a href="/admin/listUsers">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-user fa-4x"></i>
+
+                        <span class="label label-info">All Users</span>
+                        <!--<span class="label label-danger" on>145</span>-->
+                        <p>
+                            查看全部的用户
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                <a href="/admin/manageServicemen">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-cutlery fa-4x"></i>
+
+                        <span class="label label-info">Manage Servicemen</span>
+                        <p>
+                            管理维修人员信息
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                <a href="/admin/manageUsers">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-file-o fa-4x"></i>
+
+                        <span class="label label-info">Manage Users</span>
+                        <p>
+                            管理用户信息
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                <a href="/admin/changePassword">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-cog fa-4x"></i>
+
+                        <span class="label label-info">Change Password</span>
+                        <p>
+                            更改管理员密码
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                <a href="/admin/listPosts">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-sign-in fa-4x"></i>
+
+                        <span class="label label-info">Repair Post</span>
+                        <p>
+                            查看全部报修信息
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                <a href="#">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-recycle fa-4x"></i>
+
+                        <span class="label label-info">Manage Admins</span>
+                        <p>
+                            管理管理员信息
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 text-center">
+                <a href="/admin/logout">
+                    <div class="alert alert-warning">
+                        <i class="fa fa-power-off fa-4x"></i>
+
+                        <span class="label label-info">LOGOUT</span>
+                        <p>
+                            登出
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+<section id="main">
+                <div class="container">
+                    <div class="row">
+                        <!--<div class="col-lg-9 col-md-9 col-sm-9 alert alert-info">-->
+
+                            <!--<h3 class=" text-center">发布新通知</h3>-->
+                            <!--<div class="hr-div">-->
+                                <!--<hr/>-->
+                            <!--</div>-->
+                            <!--<form>-->
+
+
+                                <!--<div class="form-group col-lg-12 col-md-12 col-sm-12">-->
+                                    <!--<label>请输入标题：</label>-->
+                                    <!--<input type="text" class="form-control" required="required" placeholder="标题 "/>-->
+                                <!--</div>-->
+                                <!--<div class="form-group col-lg-12 col-md-12 col-sm-12">-->
+                                    <!--<label>请输入通知内容：</label>-->
+                                    <!--<textarea class="form-control" rows="14" placeholder="内容 "></textarea>-->
+                                <!--</div>-->
+
+                                <!--<div class="form-group col-lg-12 col-md-12 col-sm-12">-->
+                                    <!--<button type="submit" class="btn btn-primary">发布通知</button>-->
+                                <!--</div>-->
+                            <!--</form>-->
+
+            </div>
+            <!--<div class="col-lg-3 col-md-3 col-sm-3">-->
+                <!--<a href="/admin/logout" class=" label label-danger"><strong>登出</strong> </a>-->
+                <!--<div class="list-group">-->
+                    <!--<a href="#" class="list-group-item active">快速链接</a>-->
+                    <!--<a href="/admin/loginSuccess" class="list-group-item">主页</a>-->
+                    <!--<a href="/admin/listUsers" class="list-group-item">所有用户</a>-->
+                    <!--<a href="/admin/listServicemen" class="list-group-item">所有维修人员</a>-->
+                    <!--<a href="/admin/changePassword" class="list-group-item">更改密码</a>-->
+
+
+                <!--</div>-->
+                <!--<div class="alert alert-danger text-center">-->
+                    <!--<h3>最新通知</h3>-->
+                    <!--这里显示最新通知-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+</section>
+<div id="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>我们在哪</h3>
+                <p>
+                    <i>地址 :</i> 济南市舜华路1500号山东大学软件园校区
+                    <br/>
+                    &copy; 2017 Qut team All right reserved
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>客服</h3>
+                <h4><span>Call: </span>+86-1318888888</h4>
+                <h4><span>E-mail: </span>info@domain.com</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!--  Jquery Core Script -->
+<script src="__JS__/jquery-1.10.2.js"></script>
+<!--  Core Bootstrap Script -->
+<script src="__JS__/bootstrap.js"></script>
+
+</body>
+</html>

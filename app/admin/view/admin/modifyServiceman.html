@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>校园报修系统后台管理</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="__CSS__/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME CSS -->
+    <link href="__CSS__/font-awesome.min.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE CSS -->
+    <link href="__CSS__/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="head">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a href="index.html">
+                    <img src="__IMG__/logo.png"/>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                <img src="__IMG__/top-mouse.png " class="header-mid"/>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h4><span>Call:</span> +86-13188888888</h4>
+                <h4><span>E-mail:</span> info@domain.com</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 ">
+
+                <h3>更改维修人员信息</h3>
+                <div class="hr-div">
+                    <hr/>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7">
+
+                    <form method="post" action="/admin/submitModify">
+                        <input type="hidden" name="identity" value="serviceman">
+                        <div class="form-group">
+                            账号：<input type="text" name="account" class="form-control" required="required" readonly value="{$serviceman.account}"/>
+                        </div>
+                        <div class="form-group">
+                            姓名：<input type="text" name="name" class="form-control" required="required" value="{$serviceman.name}"/>
+                        </div>
+                        <div class="form-group">
+                            性别：<input type="radio" checked="checked" name="sex" value="male"/>男
+                                    <input type="radio" name="sex" value="female" />女
+                        </div>
+                        <div class="form-group">
+                            身份证号：<input type="tel" name="idCard" class="form-control" required="required" value="{$serviceman.idCard}" size="18"/>
+                        </div>
+                        <div class="form-group">
+                            电话号：<input type="text" name="tel" class="form-control" required="required" value="{$serviceman.tel}" size="11"/>
+                        </div>
+                        <div class="form-group">
+                            学校：<input type="text" name="school" class="form-control" required="required" value="{$serviceman.school}"/>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="btn btn-primary" type="submit" value="提交修改">
+                            <p class="alert alert-warning">{$message}</p>
+                        </div>
+                    </form>
+
+                </div>
+
+
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <a href="index.html" class=" label label-danger"><strong>登出</strong> </a>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">快速链接</a>
+                    <a href="/admin/loginSuccess" class="list-group-item">主页</a>
+                    <a href="/admin/listUsers" class="list-group-item">所有用户</a>
+                    <a href="/admin/listServicemen" class="list-group-item">所有维修人员</a>
+                    <a href="/admin/manageUsers" class="list-group-item">管理用户信息</a>
+                    <a href="/admin/manageServicemen" class="list-group-item">管理维修人员信息</a>
+                    <a href="/admin/listPosts" class="list-group-item">查看报修信息</a>
+                    <a href="/admin/changePassword" class="list-group-item">更改密码</a>
+
+                </div>
+                <!--<div class="alert alert-danger text-center">-->
+                    <!--<h3>Import Information</h3>-->
+                    <!--这里显示最新通知-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+</section>
+<div id="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>我们在哪</h3>
+                <p>
+                    <i>地址 :</i> 济南市舜华路1500号山东大学软件园校区
+                    <br/>
+                    &copy; 2017 Qut team All right reserved
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>客服</h3>
+                <h4><span>Call: </span>+86-1318888888</h4>
+                <h4><span>E-mail: </span>info@domain.com</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!--  Jquery Core Script -->
+<script src="__JS__/jquery-1.10.2.js"></script>
+<!--  Core Bootstrap Script -->
+<script src="__JS__/bootstrap.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>校园报修系统后台管理</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="__CSS__/bootstrap.css" rel="stylesheet"/>
+    <!-- FONT AWESOME CSS -->
+    <link href="__CSS__/font-awesome.min.css" rel="stylesheet"/>
+    <!-- CUSTOM STYLE CSS -->
+    <link href="__CSS__/style.css" rel="stylesheet"/>
+
+</head>
+<body>
+<div id="head">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a href="index.html">
+                    <img src="__IMG__/logo.png"/>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 text-center">
+                <img src="__IMG__/top-mouse.png " class="header-mid"/>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h4><span>Call:</span> +86-13188888888</h4>
+                <h4><span>E-mail:</span> info@domain.com</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 " style=" width:120%;">
+
+                <h3>{$post.theme}</h3>
+                <div class="hr-div">
+                    <hr/>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7">
+
+                    <!--<form method="post" action="/admin/changePassword?status=123">-->
+                    <div class="form-group">
+                        内容：<p  style="border:1px #000000   solid;width:90%;">
+                        {$post.content}
+                    </p>
+
+                        {volist name='images' id='image'}
+                        <img src="{$image.imagePath}" alt="报修现场图片" height="20%" width="20%">
+                        {/volist}
+                    </div>
+                    {volist name='replies' id='reply'}
+                    <div class="form-group"  style="border:1px #000000 solid; width:90%;">
+                        身份：<span class="label label-info">{$reply.role}</span>
+                        账号：<span class="label label-info">{$reply.account}</span>
+                        发布时间：<span class="label label-info">{$reply.time}</span><br>
+                        回复内容: <p>
+                        {$reply.content}
+                    </p>
+
+                    </div>
+                    {/volist}
+
+                    <!--<div class="form-group">-->
+                        <!--<input class="btn btn-primary" type="submit" value="更改密码">-->
+                        <!--<p class="alert alert-warning"></p>-->
+                    <!--</div>-->
+                    <!--</form>-->
+
+                    <!--<ul class="pagination">-->
+                        <!--<li class="disabled"><a href="#">&laquo;</a></li>-->
+                        <!--<li class="active"><a href="#">1</a></li>-->
+                        <!--<li><a href="#">2</a></li>-->
+                        <!--<li><a href="#">3</a></li>-->
+                        <!--<li><a href="#">4</a></li>-->
+                        <!--<li><a href="#">&raquo;</a></li>-->
+                    <!--</ul>-->
+
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                    <a href="index.html" class=" label label-danger"><strong>登出</strong> </a>
+                    <div class="list-group">
+                        <a href="#" class="list-group-item active">快速链接</a>
+                        <a href="/admin/loginSuccess" class="list-group-item">主页</a>
+                        <a href="/admin/listUsers" class="list-group-item">所有用户</a>
+                        <a href="/admin/listServicemen" class="list-group-item">所有维修人员</a>
+                        <a href="/admin/manageUsers" class="list-group-item">管理用户信息</a>
+                        <a href="/admin/manageServicemen" class="list-group-item">管理维修人员信息</a>
+                        <a href="/admin/listPosts" class="list-group-item">查看报修信息</a>
+                        <a href="/admin/changePassword" class="list-group-item">更改密码</a>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>我们在哪</h3>
+                <p>
+                    <i>地址 :</i> 济南市舜华路1500号山东大学软件园校区
+                    <br/>
+                    &copy; 2017 Qut team All right reserved
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>客服</h3>
+                <h4><span>Call: </span>+86-1318888888</h4>
+                <h4><span>E-mail: </span>info@domain.com</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!--  Jquery Core Script -->
+<script src="__JS__/jquery-1.10.2.js"></script>
+<!--  Core Bootstrap Script -->
+<script src="__JS__/bootstrap.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
+    <title>校园报修系统后台管理</title>
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="__CSS__/bootstrap.css" rel="stylesheet" />
+    <!-- FONT AWESOME CSS -->
+    <link href="__CSS__/font-awesome.min.css" rel="stylesheet" />
+    <!-- CUSTOM STYLE CSS -->
+    <link href="__CSS__/style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function show_confirm(account)
+        {
+            var r=confirm("确认删除此用户？");
+            if (r==true)
+            {
+                window.location.href='/admin/delete?code=1&account='+account;
+            }
+        }
+
+        function show_confirm2(account)
+        {
+            var r=confirm("禁止此用户登陆？？");
+            if (r==true)
+            {
+                window.location.href='/admin/ban?identity=serviceman&account='+account;
+            }
+        }
+
+        function show_confirm3(account)
+        {
+            var r=confirm("确认解禁此用户？");
+            if (r==true)
+            {
+                window.location.href='/admin/rmBan?identity=serviceman&account='+account;
+            }
+        }
+    </script>
+
+</head>
+<body>
+<div id="head">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <a href="index.html">
+                    <img src="__IMG__/logo.png"  />
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 text-center" >
+                <img src="__IMG__/top-mouse.png "  class="header-mid" />
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h4><span>Call:</span> +86-13188888888</h4>
+                <h4><span>E-mail:</span> info@domain.com</h4>
+            </div>
+
+        </div>
+    </div>
+</div>
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-9 ">
+
+                <h3>全部维修人员 <span class="label label-danger"> {$count} </span></h3>
+                <div class="hr-div"> <hr /></div>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                        <tr>
+                            <th>账号</th>
+                            <th>姓名</th>
+                            <th>身份证号</th>
+                            <th>学校</th>
+                            <th>状态</th>
+                            <th colspan="4">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {volist name='list' id='serviceman'}
+                        <tr>
+                            <!--<td> <i class="fa fa-user" ></i> <span class="label label-danger">New</span></td>-->
+                            <td>{$serviceman.account}</td>
+                            <td>{$serviceman.name}</td>
+                            <td><span class="label label-info">{$serviceman.idCard}</span></td>
+                            <td>{$serviceman.school}</td>
+                            <td><span class="label label-success">{$serviceman.isOnline}</span></td>
+                            <td width="19"><a class="label label-info" href="/admin/manageServicemen?account={$serviceman.account}&status=1">编辑 </a></td>
+                            <td width="19"><a class="label label-danger" onclick="show_confirm('{$serviceman.account}')">删除 </a></td>
+                            <td width="19"><a class="label label-warning" onclick="show_confirm2('{$serviceman.account}')">禁用 </a></td>
+                            <td width="19"><a class="label label-success" onclick="show_confirm3('{$serviceman.account}')">解禁 </a></td>
+                        </tr>
+                        {/volist}
+
+                        </tbody>
+                    </table>
+                </div>
+                {$list->render()}
+                <!--<ul class="pagination">-->
+                <!--<li class="disabled"><a href="#">&laquo;</a></li>-->
+                <!--<li class="active"><a href="#">1</a></li>-->
+                <!--<li><a href="#">2</a></li>-->
+                <!--<li><a href="#">3</a></li>-->
+                <!--<li><a href="#">4</a></li>-->
+                <!--<li><a href="#">5</a></li>-->
+                <!--<li><a href="#">&raquo;</a></li>-->
+                <!--</ul>-->
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <a href="/admin/logout" class=" label label-danger"><strong>登出</strong> </a>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">快速链接</a>
+                    <a href="/admin/loginSuccess" class="list-group-item">主页</a>
+                    <a href="/admin/listUsers" class="list-group-item">所有用户</a>
+                    <a href="/admin/listServicemen" class="list-group-item">所有维修人员</a>
+                    <a href="/admin/manageUsers" class="list-group-item">管理用户信息</a>
+                    <a href="/admin/manageServicemen" class="list-group-item">管理维修人员信息</a>
+                    <a href="/admin/listPosts" class="list-group-item">查看报修信息</a>
+                    <a href="/admin/changePassword" class="list-group-item">更改密码</a>
+
+
+                </div>
+                <div class="alert alert-danger text-center">
+                    <h3>最新通知</h3>
+                    这里显示最新通知
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<div id="footer">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>我们在哪</h3>
+                <p>
+                    <i>地址 :</i> 济南市舜华路1500号山东大学软件园校区
+                    <br/>
+                    &copy; 2017 Qut team All right reserved
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <h3>客服</h3>
+                <h4><span>Call: </span>+86-1318888888</h4>
+                <h4><span>E-mail: </span>info@domain.com</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+<!--  Jquery Core Script -->
+<script src="__JS__/jquery-1.10.2.js"></script>
+<!--  Core Bootstrap Script -->
+<script src="__JS__/bootstrap.js"></script>
+
+</body>
+</html>

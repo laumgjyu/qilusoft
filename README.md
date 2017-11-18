@@ -1,0 +1,3 @@
+# qilusoft
+山东省大学生软件设计大赛后台
+部署之后启动根目录下的start.php来开启websocket
